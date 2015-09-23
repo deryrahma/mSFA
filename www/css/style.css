@@ -1,1 +1,73 @@
-/* Empty. Add your own CSS if you like */
+/**
+ * Style untuk halaman login
+ */
+.login-page {
+  text-align: center;
+  background-color: #737373
+}
+.login-page .brand-image {
+  height: 60px;
+  position: fixed;
+  right: 0;
+  margin: 0 20px
+}
+.login-page .glow {
+  padding-top: 30%;
+  font-weight: bolder;
+  color: white;
+  text-shadow: 0 0 4px #fff;
+}
+.login-page .sub-title {
+  text-shadow: 2px 2px 4px #000;
+  color: #f5f5f5;
+}
+.login-page .sub-title strong {
+  color: #08C1FF
+}
+.login-page .muted {
+  color: #c4c4c4;
+  font-weight: bold;
+}
+.login-spinner .spinner svg {
+  width: 50px;
+  height: 50px;
+}
+.login-spinner p {
+  margin: 5px 0 0 12px;
+}
+.login-spinner p.main {
+  font-size: 20px;
+}
+.login-spinner p.sub {
+  font-size: 13px;
+}
+
+/**
+ * Style untuk halaman login
+ */
+.home-page {
+  background-color: #2b2b2b;
+}
+.home-page-col {
+  border-radius: 3px;
+  text-align: center;
+}
+.home-page-col h6 {
+  margin: 5px 0;
+  padding: 0;
+  color: #fff;
+  font-weight: bolder;
+}
+.home-page-col .home-page-icon {
+  color: #fff;
+  font-size: 60px;
+}
+.home-page-col-red {
+  background-color: #ef473a;
+}
+.home-page-col-white {
+  background-color: #fff;
+}
+.home-page-col-white h6 {
+  color: #000;
+}
