@@ -43,10 +43,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'AgendaCtrl'
   } )
 
-  .state( 'agendaEdit', {
-    url: '/agenda/edit/:id',
-    templateUrl: 'templates/agenda/edit.html',
-    controller: 'AgendaEditCtrl'
+  .state( 'agendaEditTA', {
+    url: '/agenda/edit/ta/:id',
+    templateUrl: 'templates/agenda/editTA.html',
+    controller: 'AgendaEditTACtrl'
+  } )
+
+  .state( 'agendaEditPB', {
+    url: '/agenda/edit/pb/:id',
+    templateUrl: 'templates/agenda/editPB.html',
+    controller: 'AgendaEditPBCtrl'
   } )
 
   .state( 'agendaCreate', {
@@ -62,5 +68,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   } );
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise( '/login' );
+  $urlRouterProvider.otherwise( '/home' );
 });

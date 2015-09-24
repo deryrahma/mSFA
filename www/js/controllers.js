@@ -89,13 +89,15 @@ angular.module('starter.controllers', [])
   };
   $scope.groups[0].items.push( {
     id: 0,
+    type: 'pb',
     aktivitas: 'Product Booking',
     konsumen: 'KHOLIK',
     kodeagenda: 'MWA-BOOKPRORG/VIII/01/13-000004',
     timestamp: 'Aug 01, 2013 10:56'
   } );
   $scope.groups[0].items.push( {
-    id: 1,
+    id: 0,
+    type: 'ta',
     aktivitas: 'Task Assignment',
     konsumen: 'LIDIA CELL',
     kodeagenda: 'MWA-PSTA/VIII/01/13-0000019',
@@ -108,7 +110,8 @@ angular.module('starter.controllers', [])
     show: false
   };
   $scope.groups[1].items.push( {
-    id: 2,
+    id: 1,
+    type: 'ta',
     aktivitas: 'Task Assignment',
     konsumen: 'AFTALA CELL 2',
     kodeagenda: 'MWA-PSTA/VIII/01/13-0000026',
@@ -160,8 +163,8 @@ angular.module('starter.controllers', [])
   };
 } )
 
-.controller( 'AgendaEditCtrl', function( $scope, $state, $stateParams, $ionicModal, $ionicHistory ) {
-  $ionicModal.fromTemplateUrl('templates/agenda/modalEdit.html', {
+.controller( 'AgendaEditTACtrl', function( $scope, $state, $stateParams, $ionicModal, $ionicHistory ) {
+  $ionicModal.fromTemplateUrl('templates/agenda/modalEditTA.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modal = modal;
@@ -169,15 +172,6 @@ angular.module('starter.controllers', [])
 
   $scope.groups = [];
   $scope.groups[0] = {
-    aktivitas: 'Product Booking',
-    tipeKonsumen: 'OUTLET',
-    konsumen: 'KHOLIK',
-    timestamp: 'Aug 01, 2013 10:56',
-    deskripsi: '0',
-    hasil: '',
-    status: 'Selesai'
-  };
-  $scope.groups[1] = {
     aktivitas: 'Task Assignment',
     tipeKonsumen: 'OUTLET',
     konsumen: 'LIDIA CELL',
@@ -186,7 +180,7 @@ angular.module('starter.controllers', [])
     hasil: '',
     status: 'Selesai'
   };
-  $scope.groups[2] = {
+  $scope.groups[1] = {
     aktivitas: 'Task Assignment',
     tipeKonsumen: 'OUTLET',
     konsumen: 'AFTALA CELL 2',
@@ -223,6 +217,54 @@ angular.module('starter.controllers', [])
   };
 
   $scope.doUpdate = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.doSubmit = function() {
+  };
+} )
+
+.controller( 'AgendaEditPBCtrl', function( $scope, $state, $stateParams, $ionicModal, $ionicHistory ) {
+  $ionicModal.fromTemplateUrl('templates/agenda/modalEditPB.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  $scope.groups = [];
+  $scope.groups[0] = {
+    perusahaan: 'PT. BATAVIA AKSES NUSANTARA',
+    distributor: 'PT. BATAVIA AKSES NUSANTARA-Karawang',
+    to: 'KHOLIK',
+    idx: 1,
+    items: []
+  };
+
+  $scope.groups[0].items.push( {
+    nama: 'Perdana Simpati 5k',
+    jumlah: 5,
+    cp: '085309090046 - 85309090050'
+  } );
+
+  $scope.submitData = $scope.groups[$stateParams.id];
+
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+
+  $scope.showModal = function() {
+    $scope.modal.show();
+  };
+
+  $scope.hideModal = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.doAccept = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.doReject = function() {
     $scope.modal.hide();
   };
 

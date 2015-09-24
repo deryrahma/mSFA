@@ -1,0 +1,41 @@
+<ion-view view-title="Halaman Pembaharuan Agenda">
+  <ion-header-bar align-title="center" class="bar-dark">
+    <button class="button icon ion-ios-home" ng-click="goBack()"></button>
+    <h1 class="title">Product Booking Approval</h1>
+    <button class="button icon ion-navicon" ng-click="showModal()"></button>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doSubmit()">
+      <ion-list>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Perusahaan:</span>
+          <input type="text" ng-model="submitData.perusahaan">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Distributor:</span>
+          <input type="text" ng-model="submitData.distributor">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Ditujukan Kepada:</span>
+          <input type="text" ng-model="submitData.to">
+        </ion-item>
+        <ion-item class="item-divider">
+          <div class="row">
+            <div class="col col-90">
+              Daftar Produk ({{submitData.idx}})
+            </div>
+            <div class="col">
+              <i class="ion-share" style="font-size: 25px"></i>
+            </div>
+          </div>
+        </ion-item>
+        <ion-item class="item-thumbnail-left" ng-repeat="item in submitData.items">
+          <img src="">
+          <p class="list-item-title" style="margin-top: 7px">{{item.nama}}</p>
+          <p class="list-item-text">Quantity {{item.jumlah}}</p>
+          <p class="list-item-text">{{item.cp}}</p>
+        </ion-item>
+      </ion-list>
+    </form>
+  </ion-content>
+</ion-view>
