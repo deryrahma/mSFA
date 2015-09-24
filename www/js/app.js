@@ -61,6 +61,30 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'AgendaCreateCtrl'
   } )
 
+  .state( 'internalSurvey', {
+    url: '/internalSurvey',
+    templateUrl: 'templates/agenda/internalSurvey.html',
+    controller: 'InternalSurveyCtrl'
+  } )
+
+  .state( 'swingerSurvey', {
+    url: '/swingerSurvey',
+    templateUrl: 'templates/agenda/swingerSurvey.html',
+    controller: 'SwingerSurveyCtrl'
+  } )
+
+  .state( 'salesforceSales', {
+    url: '/salesforceSales',
+    templateUrl: 'templates/agenda/salesforceSales.html',
+    controller: 'SalesforceSalesCtrl'
+  } )
+
+  .state( 'salesforceSalesAddUnit', {
+    url: '/salesforceSalesAddUnit',
+    templateUrl: 'templates/agenda/salesforceSalesAddUnit.html',
+    controller: 'SalesforceSalesAddUnitCtrl'
+  } )
+
   .state( 'outbox', {
     url: '/outbox',
     templateUrl: 'templates/outbox/index.html',
@@ -80,5 +104,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   } );
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise( '/home' );
+  $urlRouterProvider.otherwise( '/salesforceSalesAddUnit' );
 });

@@ -128,18 +128,6 @@ angular.module('starter.controllers', [])
     $scope.modal.hide();
   };
 
-  $scope.openDraft = function() {
-    $scope.modal.hide();
-  };
-
-  $scope.saveDraft = function() {
-    $scope.modal.hide();
-  };
-
-  $scope.doProcess = function() {
-    $scope.modal.hide();
-  };
-
   $scope.doSubmit = function() {
   };
 } )
@@ -162,18 +150,6 @@ angular.module('starter.controllers', [])
   };
 
   $scope.hideModal = function() {
-    $scope.modal.hide();
-  };
-
-  $scope.openDraft = function() {
-    $scope.modal.hide();
-  };
-
-  $scope.saveDraft = function() {
-    $scope.modal.hide();
-  };
-
-  $scope.doProcess = function() {
     $scope.modal.hide();
   };
 
@@ -248,10 +224,6 @@ angular.module('starter.controllers', [])
     $scope.modal.hide();
     $state.go( 'agendaCreate' );
   };
-
-  $scope.doRefresh = function() {
-    $scope.modal.hide();
-  };
   
   /*
    * if given group is the selected group, deselect it
@@ -270,6 +242,12 @@ angular.module('starter.controllers', [])
     scope: $scope
   }).then(function(modal) {
     $scope.modal = modal;
+  });
+
+  $ionicModal.fromTemplateUrl('templates/agenda/modalCheckIn.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalTwo = modal;
   });
 
   $scope.groups = [];
@@ -306,20 +284,28 @@ angular.module('starter.controllers', [])
     $scope.modal.hide();
   };
 
+  $scope.hideModalTwo = function() {
+    $scope.modalTwo.hide();
+  };
+
   $scope.doCheckIn = function() {
     $scope.modal.hide();
+    $scope.modalTwo.show();
   };
 
-  $scope.brokenQRCode = function() {
-    $scope.modal.hide();
+  $scope.internalSurvey = function() {
+    $scope.modalTwo.hide();
+    $state.go( 'internalSurvey' );
   };
 
-  $scope.outletClosed = function() {
-    $scope.modal.hide();
+  $scope.swingerSurvey = function() {
+    $scope.modalTwo.hide();
+    $state.go( 'swingerSurvey' );
   };
 
-  $scope.doUpdate = function() {
-    $scope.modal.hide();
+  $scope.salesforceSales = function() {
+    $scope.modalTwo.hide();
+    $state.go( 'salesforceSales' );
   };
 
   $scope.doSubmit = function() {
@@ -362,14 +348,6 @@ angular.module('starter.controllers', [])
     $scope.modal.hide();
   };
 
-  $scope.doAccept = function() {
-    $scope.modal.hide();
-  };
-
-  $scope.doReject = function() {
-    $scope.modal.hide();
-  };
-
   $scope.doSubmit = function() {
   };
 } )
@@ -395,16 +373,303 @@ angular.module('starter.controllers', [])
     $scope.modal.hide();
   };
 
-  $scope.openDraft = function() {
+  $scope.doSubmit = function() {
+  };
+} )
+
+.controller( 'InternalSurveyCtrl', function( $scope, $state, $ionicModal, $ionicHistory ) {
+  $ionicModal.fromTemplateUrl('templates/agenda/modalInternalSurvey.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/agenda/modalInternalSurveyQtyJual.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalQtyJual = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/agenda/modalInternalSurveyStock.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalStock = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/agenda/modalInternalSurveyHargaJual.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalHargaJual = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/agenda/modalInternalSurveyHargaBeli.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalHargaBeli = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/agenda/modalInternalSurveyQtyBeli.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalQtyBeli = modal;
+  });
+
+  $scope.data = {};
+
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+
+  $scope.showModal = function() {
+    $scope.modal.show();
+  };
+
+  $scope.hideModal = function() {
     $scope.modal.hide();
   };
 
-  $scope.saveDraft = function() {
+  $scope.showQtyJual = function() {
+    $scope.modalQtyJual.show();
+  };
+  $scope.hideModalQtyJual = function() {
+    $scope.modalQtyJual.hide();
+  };
+
+  $scope.showStock = function() {
+    $scope.modalStock.show();
+  };
+  $scope.hideModalStock = function() {
+    $scope.modalStock.hide();
+  };
+
+  $scope.showHargaJual = function() {
+    $scope.modalHargaJual.show();
+  };
+  $scope.hideModalHargaJual = function() {
+    $scope.modalHargaJual.hide();
+  };
+
+  $scope.showHargaBeli = function() {
+    $scope.modalHargaBeli.show();
+  };
+  $scope.hideModalHargaBeli = function() {
+    $scope.modalHargaBeli.hide();
+  };
+
+  $scope.showQtyBeli = function() {
+    $scope.modalQtyBeli.show();
+  };
+  $scope.hideModalQtyBeli = function() {
+    $scope.modalQtyBeli.hide();
+  };
+
+  $scope.doSubmit = function() {
+  };
+} )
+
+.controller( 'SwingerSurveyCtrl', function( $scope, $state, $ionicModal, $ionicHistory ) {
+  $ionicModal.fromTemplateUrl('templates/agenda/modalSwingerSurvey.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/agenda/modalSwingerSurveySimpati.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalSimpati = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/agenda/modalSwingerSurveyAs.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalAs = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/agenda/modalSwingerSurveyXL.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalXL = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/agenda/modalSwingerSurveyIM3.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalIM3 = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/agenda/modalSwingerSurveyThree.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalThree = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/agenda/modalSwingerSurveyAxis.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalAxis = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/agenda/modalSwingerSurveyOthers.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalOthers = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/agenda/modalSwingerSurveyNewCustomer.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalNewCustomer = modal;
+  });
+
+  $scope.data = {};
+
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+
+  $scope.showModal = function() {
+    $scope.modal.show();
+  };
+
+  $scope.hideModal = function() {
     $scope.modal.hide();
   };
 
-  $scope.doProcess = function() {
+  $scope.showSimpati = function() {
+    $scope.modalSimpati.show();
+  };
+  $scope.hideSimpati = function() {
+    $scope.modalSimpati.hide();
+  };
+
+  $scope.showAs = function() {
+    $scope.modalAs.show();
+  };
+  $scope.hideAs = function() {
+    $scope.modalAs.hide();
+  };
+
+  $scope.showXL = function() {
+    $scope.modalXL.show();
+  };
+  $scope.hideXL = function() {
+    $scope.modalXL.hide();
+  };
+
+  $scope.showIM3 = function() {
+    $scope.modalIM3.show();
+  };
+  $scope.hideIM3 = function() {
+    $scope.modalIM3.hide();
+  };
+
+  $scope.showThree = function() {
+    $scope.modalThree.show();
+  };
+  $scope.hideThree = function() {
+    $scope.modalThree.hide();
+  };
+
+  $scope.showAxis = function() {
+    $scope.modalAxis.show();
+  };
+  $scope.hideAxis = function() {
+    $scope.modalAxis.hide();
+  };
+
+  $scope.showOthers = function() {
+    $scope.modalOthers.show();
+  };
+  $scope.hideOthers = function() {
+    $scope.modalOthers.hide();
+  };
+
+  $scope.showNewCustomer = function() {
+    $scope.modalNewCustomer.show();
+  };
+  $scope.hideNewCustomer = function() {
+    $scope.modalNewCustomer.hide();
+  };
+
+  $scope.doSubmit = function() {
+  };
+} )
+
+.controller( 'SalesforceSalesCtrl', function( $scope, $state, $ionicModal, $ionicHistory ) {
+  $ionicModal.fromTemplateUrl('templates/agenda/modalSalesforceSales.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/agenda/modalSalesforceSalesMethod.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalTwo = modal;
+  });
+
+  $scope.data = {};
+
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+
+  $scope.showModal = function() {
+    $scope.modal.show();
+  };
+  $scope.hideModal = function() {
     $scope.modal.hide();
+  };
+
+  $scope.showModalTwo = function() {
+    $scope.modalTwo.show();
+  };
+  $scope.hideModalTwo = function() {
+    $scope.modalTwo.hide();
+  };
+
+  $scope.addUnit = function() {
+    $scope.modalTwo.hide();
+    $state.go( 'salesforceSalesAddUnit' );
+  }
+
+  $scope.doSubmit = function() {
+  };
+} )
+
+.controller( 'SalesforceSalesAddUnitCtrl', function( $scope, $state, $ionicModal, $ionicHistory ) {
+  $ionicModal.fromTemplateUrl('templates/agenda/modalSalesforceSalesAddUnit.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/agenda/modalSalesforceSalesProduct.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalProduct = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/agenda/modalSalesforceSalesSerial.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalSerial = modal;
+  });
+
+  $scope.data = {};
+
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+
+  $scope.showModal = function() {
+    $scope.modal.show();
+  };
+  $scope.hideModal = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.showModalProduct = function() {
+    $scope.modalProduct.show();
+  };
+  $scope.hideModalProduct = function() {
+    $scope.submitData = {
+      product: 'Perdana Simpati 5k',
+      serialFormat: 'MSISDN'
+    };
+    $scope.modalProduct.hide();
+  };
+
+  $scope.showModalSerial = function() {
+    $scope.modalSerial.show();
+  };
+  $scope.hideModalSerial = function() {
+    $scope.modalSerial.hide();
   };
 
   $scope.doSubmit = function() {

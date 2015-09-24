@@ -1,0 +1,77 @@
+<ion-view view-title="Halaman Survey Internal">
+  <ion-header-bar align-title="center" class="bar-dark">
+    <button class="button icon ion-ios-home" ng-click="goBack()"></button>
+    <h1 class="title">Survey Internal</h1>
+    <button class="button icon ion-navicon" ng-click="showModal()"></button>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doSubmit()">
+      <ion-list>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Sales Area:</span>
+          <input type="text" ng-model="submitData.salesArea">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Outlet:</span>
+          <input type="text" ng-model="submitData.outlet">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Tanggal Mulai:</span>
+          <input type="text" ng-model="submitData.tanggalMulai">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Tanggal Selesai:</span>
+          <input type="text" ng-model="submitData.tanggalSelesai">
+        </ion-item>
+        <ion-item class="item-divider">
+          <div class="row">
+            <div class="col col-80">
+              Daftar Foto
+            </div>
+            <div class="col col-10">
+              <i class="ion-share" style="font-size: 25px"></i>
+            </div>
+            <div class="col">
+              <i class="ion-plus" style="font-size: 25px"></i>
+            </div>
+          </div>
+        </ion-item>
+        <ion-item class="item-divider">
+          <div class="row">
+            <div class="col col-90">
+              Daftar Survey (5)
+            </div>
+            <div class="col">
+              <i class="ion-share" style="font-size: 25px"></i>
+            </div>
+          </div>
+        </ion-item>
+        <ion-item class="item-thumbnail-left" ng-click="showQtyJual()">
+          <img src="">
+          Qty Jual
+          <p>Total - 0</p>
+        </ion-item>
+        <ion-item class="item-thumbnail-left" ng-click="showStock()">
+          <img src="">
+          Stock
+          <p>Total - 0</p>
+        </ion-item>
+        <ion-item class="item-thumbnail-left" ng-click="showHargaJual()">
+          <img src="">
+          Harga Jual
+          <p>Total - 0</p>
+        </ion-item>
+        <ion-item class="item-thumbnail-left" ng-click="showHargaBeli()">
+          <img src="">
+          Harga Beli
+          <p>Total - 0</p>
+        </ion-item>
+        <ion-item class="item-thumbnail-left" ng-click="showQtyBeli()">
+          <img src="">
+          Qty Beli
+          <p>Total - 0</p>
+        </ion-item>
+      </ion-list>
+    </form>
+  </ion-content>
+</ion-view>

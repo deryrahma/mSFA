@@ -1,0 +1,54 @@
+<ion-view view-title="Halaman Salesforce Sales Tambah Unit">
+  <ion-header-bar align-title="center" class="bar-dark">
+    <button class="button icon ion-ios-home" ng-click="goBack()"></button>
+    <h1 class="title">Product Chooser</h1>
+    <button class="button icon ion-navicon" ng-click="showModal()"></button>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doSubmit()">
+      <ion-list>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Product:</span>
+          <input type="text" ng-model="submitData.product" ng-click="showModalProduct()">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Serial Format:</span>
+          <input type="text" ng-model="submitData.serialFormat" ng-click="showModalSerial()">
+        </ion-item>
+        <ion-item class="item-checkbox">
+          <label class="checkbox">
+            <input type="checkbox">
+          </label>
+          085309090036
+        </ion-item>
+        <ion-item class="item-checkbox">
+          <label class="checkbox">
+            <input type="checkbox">
+          </label>
+          085309090037
+        </ion-item>
+        <ion-item class="item-checkbox">
+          <label class="checkbox">
+            <input type="checkbox">
+          </label>
+          085309090038
+        </ion-item>
+        <ion-item class="item-checkbox">
+          <label class="checkbox">
+            <input type="checkbox">
+          </label>
+          085309090039
+        </ion-item>
+      </ion-list>
+    </form>
+  </ion-content>
+  <ion-footer-bar class="bar-assertive" style="height: auto">
+    <div class="list">
+      <div class="item item-input-inset" style="padding: 0">
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="Search...">
+        </label>
+      </div>
+    </div>
+  </ion-footer-bar>
+</ion-view>
