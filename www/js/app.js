@@ -35,8 +35,26 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: '/home',
     templateUrl: 'templates/home.html',
     controller: 'HomeCtrl'
+  } )
+
+  .state( 'agenda', {
+    url: '/agenda',
+    templateUrl: 'templates/agenda/index.html',
+    controller: 'AgendaCtrl'
+  } )
+
+  .state( 'agendaEdit', {
+    url: '/agenda/edit/:id',
+    templateUrl: 'templates/agenda/edit.html',
+    controller: 'AgendaEditCtrl'
+  } )
+
+  .state( 'agendaCreate', {
+    url: '/agenda/create',
+    templateUrl: 'templates/agenda/create.html',
+    controller: 'AgendaCreateCtrl'
   } );
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise( '/home' );
+  $urlRouterProvider.otherwise( '/agenda' );
 });

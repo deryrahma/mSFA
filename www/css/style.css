@@ -1,4 +1,32 @@
 /**
+ * Style untuk collapsible
+ */
+.list .item.item-accordion {
+  line-height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+p.list-item-title {
+  font-weight: bold;
+  font-size: 20px;
+  margin: -15px 0 0;
+  height: 31px;
+}
+p.list-item-text {
+  font-size: 12px;
+  margin: 0;
+  height: 23px;
+}
+
+/**
  * Style untuk halaman login
  */
 .login-page {

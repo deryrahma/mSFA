@@ -1,0 +1,32 @@
+<ion-view view-title="Halaman Agenda">
+  <ion-header-bar align-title="center" class="bar-dark">
+    <button class="button icon ion-ios-home" ng-click="goBack()"></button>
+    <h1 class="title">Agenda</h1>
+    <button class="button icon ion-navicon" ng-click="showModal()"></button>
+  </ion-header-bar>
+  <ion-content>
+    <ion-list>
+      <div ng-repeat="group in groups">
+        <ion-item class="item-stable" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+          <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
+          &nbsp;{{group.name}}
+        </ion-item>
+        <ion-item class="item-accordion" ng-repeat="item in group.items" ng-show="isGroupShown(group)" href="#/agenda/edit/{{item.id}}">
+          <p class="list-item-title">{{item.aktivitas}}</p>
+          <p class="list-item-text">{{item.konsumen}}</p>
+          <p class="list-item-text">{{item.kodeagenda}}</p>
+          <p class="list-item-text">{{item.timestamp}}</p>
+        </ion-item>
+      </div>
+    </ion-list>
+  </ion-content>
+  <ion-footer-bar class="bar-assertive" style="height: auto">
+    <div class="list">
+      <div class="item item-input-inset" style="padding: 0">
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="Search...">
+        </label>
+      </div>
+    </div>
+  </ion-footer-bar>
+</ion-view>
