@@ -1,0 +1,103 @@
+<ion-view view-title="Halaman Menambahkan Agenda">
+  <ion-header-bar align-title="center" class="bar-dark">
+    <button class="button icon ion-ios-home" ng-click="goBack()"></button>
+    <h1 class="title">Add POS Object</h1>
+    <button class="button icon ion-navicon" ng-click="showModal()"></button>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doSubmit()">
+      <ion-list>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Kategori Channel:</span>
+          <input type="text" ng-model="submitData.kategoriChannel">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Kategori Objek:</span>
+          <input type="text" ng-model="submitData.kategoriObjek">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Nama:</span>
+          <input type="text" ng-model="submitData.nama">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Kota:</span>
+          <input type="text" ng-model="submitData.kota">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Kecamatan:</span>
+          <input type="text" ng-model="submitData.kecamatan">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Desa:</span>
+          <input type="text" ng-model="submitData.desa">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Alamat:</span>
+          <textarea rows="8" cols="10" ng-model="submitData.alamat"></textarea>
+        </ion-item>
+        <ion-item class="item-divider">
+          <div class="row">
+            <div class="col col-80">
+              Daftar Foto
+            </div>
+            <div class="col col-10">
+              <i class="ion-share" style="font-size: 25px"></i>
+            </div>
+            <div class="col">
+              <i class="ion-plus" style="font-size: 25px"></i>
+            </div>
+          </div>
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Kategori:</span>
+          <input type="text" ng-model="submitData.kategori">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Tipe:</span>
+          <input type="text" ng-model="submitData.tipe">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Bank:</span>
+          <input type="text" ng-model="submitData.bank">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">No. Rekening:</span>
+          <input type="text" ng-model="submitData.noRek">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Nama Owner:</span>
+          <input type="text" ng-model="submitData.namaOwner">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">No. Telepon Owner:</span>
+          <input type="text" ng-model="submitData.noTelpOwner">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">PIC:</span>
+          <input type="text" ng-model="submitData.pic">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">No. Telepon PIC:</span>
+          <input type="text" ng-model="submitData.noTelpPIC">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">No. Multichip:</span>
+          <input type="text" ng-model="submitData.noMultichip">
+        </ion-item>
+        <ion-item class="item-divider">
+          <div class="row">
+            <div class="col col-80">
+              Daftar Nomor RS
+            </div>
+            <div class="col col-10">
+              <i class="ion-share" style="font-size: 25px"></i>
+            </div>
+            <div class="col">
+              <i class="ion-plus" style="font-size: 25px"></i>
+            </div>
+          </div>
+        </ion-item>
+      </ion-list>
+    </form>
+  </ion-content>
+</ion-view>

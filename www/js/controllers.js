@@ -13,37 +13,65 @@ angular.module('starter.controllers', [])
   };
 } )
 
-.controller( 'HomeCtrl', function( $scope, $state ) {
+.controller( 'HomeCtrl', function( $scope, $state, $ionicModal ) {
   $scope.data = {};
 
+  $ionicModal.fromTemplateUrl('templates/transaksi/modalIndex.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  // KOTAK KELUAR
   $scope.goOutbox = function() {
     $state.go( 'outbox' );
   };
 
+  // PERSONAL
   $scope.goPersonal = function() {
     $state.go( 'login' );
   };
 
+  // AGENDA
   $scope.goAgenda = function() {
     $state.go( 'agenda' );
   };
 
+  // TRANSAKSI
   $scope.goTransaction = function() {
-    $state.go( 'login' );
+    $scope.modal.show();
+  };
+  $scope.hideModal = function() {
+    $scope.modal.hide();
+  };
+  $scope.addPOS = function() {
+    $state.go( 'addPos' );
+    $scope.modal.hide();
+  };
+  $scope.addEvent = function() {
+    $state.go( 'addEvent' );
+    $scope.modal.hide();
+  };
+  $scope.eventSales = function() {
+    $scope.modal.hide();
   };
 
+  // BROADCAST
   $scope.goBroadcast = function() {
     $state.go( 'login' );
   };
 
+  // COLLABORATE
   $scope.goCollaborate = function() {
     $state.go( 'login' );
   };
 
+  // LAPORAN
   $scope.goReport = function() {
     $state.go( 'login' );
   };
 
+  // PENGATURAN
   $scope.goSettings = function() {
     $state.go( 'login' );
   };
@@ -76,6 +104,80 @@ angular.module('starter.controllers', [])
   };
   $scope.isGroupShown = function(group) {
     return group.show;
+  };
+} )
+
+.controller( 'AddPOSCtrl', function( $scope, $state, $ionicModal, $ionicHistory ) {
+  $scope.data = {};
+
+  $ionicModal.fromTemplateUrl('templates/transaksi/modalAddPOS.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+
+  $scope.showModal = function() {
+    $scope.modal.show();
+  };
+
+  $scope.hideModal = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.openDraft = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.saveDraft = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.doProcess = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.doSubmit = function() {
+  };
+} )
+
+.controller( 'AddEventCtrl', function( $scope, $state, $ionicModal, $ionicHistory ) {
+  $scope.data = {};
+
+  $ionicModal.fromTemplateUrl('templates/transaksi/modalAddEvent.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+
+  $scope.showModal = function() {
+    $scope.modal.show();
+  };
+
+  $scope.hideModal = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.openDraft = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.saveDraft = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.doProcess = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.doSubmit = function() {
   };
 } )
 

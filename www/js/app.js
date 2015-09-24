@@ -65,6 +65,18 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: '/outbox',
     templateUrl: 'templates/outbox/index.html',
     controller: 'OutboxCtrl'
+  } )
+
+  .state( 'addPos', {
+    url: '/addPos',
+    templateUrl: 'templates/transaksi/addPOS.html',
+    controller: 'AddPOSCtrl'
+  } )
+
+  .state( 'addEvent', {
+    url: '/addEvent',
+    templateUrl: 'templates/transaksi/addEvent.html',
+    controller: 'AddEventCtrl'
   } );
 
   // if none of the above states are matched, use this as the fallback
