@@ -53,8 +53,14 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: '/agenda/create',
     templateUrl: 'templates/agenda/create.html',
     controller: 'AgendaCreateCtrl'
+  } )
+
+  .state( 'outbox', {
+    url: '/outbox',
+    templateUrl: 'templates/outbox/index.html',
+    controller: 'OutboxCtrl'
   } );
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise( '/agenda' );
+  $urlRouterProvider.otherwise( '/login' );
 });

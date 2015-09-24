@@ -10,43 +10,73 @@ angular.module('starter.controllers', [])
       templateUrl: 'templates/spinner/login.html'
     });
     $state.go( 'home' );
-  }
+  };
 } )
 
 .controller( 'HomeCtrl', function( $scope, $state ) {
   $scope.data = {};
 
   $scope.goOutbox = function() {
-    $state.go( 'login' );
-  }
+    $state.go( 'outbox' );
+  };
 
   $scope.goPersonal = function() {
     $state.go( 'login' );
-  }
+  };
 
   $scope.goAgenda = function() {
     $state.go( 'agenda' );
-  }
+  };
 
   $scope.goTransaction = function() {
     $state.go( 'login' );
-  }
+  };
 
   $scope.goBroadcast = function() {
     $state.go( 'login' );
-  }
+  };
 
   $scope.goCollaborate = function() {
     $state.go( 'login' );
-  }
+  };
 
   $scope.goReport = function() {
     $state.go( 'login' );
-  }
+  };
 
   $scope.goSettings = function() {
     $state.go( 'login' );
-  }
+  };
+} )
+
+.controller( 'OutboxCtrl', function( $scope, $state, $ionicHistory ) {
+  $scope.groups = [];
+
+  $scope.groups[0] = {
+    name: 'Failed(0)',
+    items: [],
+    show: false
+  };
+  $scope.groups[1] = {
+    name: 'Pending item(0)',
+    items: [],
+    show: false
+  };
+
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+  
+  /*
+   * if given group is the selected group, deselect it
+   * else, select the given group
+   */
+  $scope.toggleGroup = function(group) {
+    group.show = !group.show;
+  };
+  $scope.isGroupShown = function(group) {
+    return group.show;
+  };
 } )
 
 .controller( 'AgendaCtrl', function( $scope, $state, $ionicModal, $ionicHistory ) {
@@ -99,24 +129,24 @@ angular.module('starter.controllers', [])
 
   $scope.goBack = function() {
     $ionicHistory.goBack();
-  }
+  };
 
   $scope.showModal = function() {
     $scope.modal.show();
-  }
+  };
 
   $scope.hideModal = function() {
     $scope.modal.hide();
-  }
+  };
 
   $scope.doCreate = function() {
     $scope.modal.hide();
     $state.go( 'agendaCreate' );
-  }
+  };
 
   $scope.doRefresh = function() {
     $scope.modal.hide();
-  }
+  };
   
   /*
    * if given group is the selected group, deselect it
@@ -146,7 +176,7 @@ angular.module('starter.controllers', [])
     deskripsi: '0',
     hasil: '',
     status: 'Selesai'
-  }
+  };
   $scope.groups[1] = {
     aktivitas: 'Task Assignment',
     tipeKonsumen: 'OUTLET',
@@ -170,34 +200,34 @@ angular.module('starter.controllers', [])
 
   $scope.goBack = function() {
     $ionicHistory.goBack();
-  }
+  };
 
   $scope.showModal = function() {
     $scope.modal.show();
-  }
+  };
 
   $scope.hideModal = function() {
     $scope.modal.hide();
-  }
+  };
 
   $scope.doCheckIn = function() {
     $scope.modal.hide();
-  }
+  };
 
   $scope.brokenQRCode = function() {
     $scope.modal.hide();
-  }
+  };
 
   $scope.outletClosed = function() {
     $scope.modal.hide();
-  }
+  };
 
   $scope.doUpdate = function() {
     $scope.modal.hide();
-  }
+  };
 
   $scope.doSubmit = function() {
-  }
+  };
 } )
 
 .controller( 'AgendaCreateCtrl', function( $scope, $state, $ionicModal, $ionicHistory ) {
@@ -211,28 +241,28 @@ angular.module('starter.controllers', [])
 
   $scope.goBack = function() {
     $ionicHistory.goBack();
-  }
+  };
 
   $scope.showModal = function() {
     $scope.modal.show();
-  }
+  };
 
   $scope.hideModal = function() {
     $scope.modal.hide();
-  }
+  };
 
   $scope.openDraft = function() {
     $scope.modal.hide();
-  }
+  };
 
   $scope.saveDraft = function() {
     $scope.modal.hide();
-  }
+  };
 
   $scope.doProcess = function() {
     $scope.modal.hide();
-  }
+  };
 
   $scope.doSubmit = function() {
-  }
+  };
 } );
