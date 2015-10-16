@@ -308,6 +308,21 @@ angular.module('starter.controllers', [])
     $state.go( 'salesforceSales' );
   };
 
+  $scope.freeSurvey = function() {
+    $scope.modalTwo.hide();
+    $state.go( 'freeSurvey' );
+  };
+
+  $scope.stockTaking = function() {
+    $scope.modalTwo.hide();
+    $state.go( 'stockTaking' );
+  };
+
+  $scope.visitOutlet = function() {
+    $scope.modalTwo.hide();
+    $state.go( 'visitOutlet' );
+  };
+
   $scope.doSubmit = function() {
   };
 } )
@@ -670,6 +685,170 @@ angular.module('starter.controllers', [])
   };
   $scope.hideModalSerial = function() {
     $scope.modalSerial.hide();
+  };
+
+  $scope.doSubmit = function() {
+  };
+} )
+
+.controller( 'FreeSurveyCtrl', function( $scope, $state, $ionicHistory ) {
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+
+  $scope.outletSurveyBranding = function() {
+    $state.go( 'freeSurveyBSO' );
+  };
+
+  $scope.matproDistribution = function() {
+    $state.go( 'freeSurveyDMP' );
+  };
+
+  $scope.shareBuy = function() {
+    $state.go( 'freeSurveyBS' );
+  };
+} )
+
+.controller( 'FreeSurveyBSOCtrl', function( $scope, $state, $ionicModal, $ionicHistory ) {
+  $ionicModal.fromTemplateUrl('templates/agenda/modalFreeSurveyBSO.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+
+  $scope.showModal = function() {
+    $scope.modal.show();
+  };
+
+  $scope.hideModal = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.doSubmit = function() {
+  };
+} )
+
+.controller( 'FreeSurveyDMPCtrl', function( $scope, $state, $ionicModal, $ionicHistory ) {
+  $ionicModal.fromTemplateUrl('templates/agenda/modalFreeSurveyDMP.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+
+  $scope.showModal = function() {
+    $scope.modal.show();
+  };
+
+  $scope.hideModal = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.doSubmit = function() {
+  };
+} )
+
+.controller( 'FreeSurveyBSCtrl', function( $scope, $state, $ionicModal, $ionicHistory ) {
+  $ionicModal.fromTemplateUrl('templates/agenda/modalFreeSurveyBS.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+
+  $scope.showModal = function() {
+    $scope.modal.show();
+  };
+
+  $scope.hideModal = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.doSubmit = function() {
+  };
+} )
+
+.controller( 'StockTakingCtrl', function( $scope, $state, $ionicModal, $ionicHistory ) {
+  $ionicModal.fromTemplateUrl('templates/agenda/modalStockTaking.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+
+  $scope.showModal = function() {
+    $scope.modal.show();
+  };
+
+  $scope.hideModal = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.doInput = function() {
+    $state.go( 'stockTakingInput' );
+  };
+
+  $scope.doSubmit = function() {
+  };
+} )
+
+.controller( 'StockTakingInputCtrl', function( $scope, $state, $ionicModal, $ionicHistory ) {
+  $ionicModal.fromTemplateUrl('templates/agenda/modalStockTakingInput.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+
+  $scope.showModal = function() {
+    $scope.modal.show();
+  };
+
+  $scope.hideModal = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.doSubmit = function() {
+  };
+} )
+
+.controller( 'VisitOutletCtrl', function( $scope, $state, $ionicModal, $ionicHistory ) {
+  $ionicModal.fromTemplateUrl('templates/agenda/modalVisitOutlet.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+
+  $scope.showModal = function() {
+    $scope.modal.show();
+  };
+
+  $scope.hideModal = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.doInput = function() {
+    $state.go( 'stockTakingInput' );
   };
 
   $scope.doSubmit = function() {

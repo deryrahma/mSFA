@@ -85,6 +85,48 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'SalesforceSalesAddUnitCtrl'
   } )
 
+  .state( 'freeSurvey', {
+    url: '/freeSurvey',
+    templateUrl: 'templates/agenda/freeSurvey.html',
+    controller: 'FreeSurveyCtrl'
+  } )
+
+  .state( 'freeSurveyBSO', {
+    url: '/freeSurveyBSO',
+    templateUrl: 'templates/agenda/freeSurveyBSO.html',
+    controller: 'FreeSurveyBSOCtrl'
+  } )
+
+  .state( 'freeSurveyDMP', {
+    url: '/freeSurveyDMP',
+    templateUrl: 'templates/agenda/freeSurveyDMP.html',
+    controller: 'FreeSurveyDMPCtrl'
+  } )
+
+  .state( 'freeSurveyBS', {
+    url: '/freeSurveyBS',
+    templateUrl: 'templates/agenda/freeSurveyBS.html',
+    controller: 'FreeSurveyBSCtrl'
+  } )
+
+  .state( 'stockTaking', {
+    url: '/stockTaking',
+    templateUrl: 'templates/agenda/stockTaking.html',
+    controller: 'StockTakingCtrl'
+  } )
+
+  .state( 'stockTakingInput', {
+    url: '/stockTakingInput',
+    templateUrl: 'templates/agenda/stockTakingInput.html',
+    controller: 'StockTakingInputCtrl'
+  } )
+
+  .state( 'visitOutlet', {
+    url: '/visitOutlet',
+    templateUrl: 'templates/agenda/visitOutlet.html',
+    controller: 'VisitOutletCtrl'
+  } )
+
   .state( 'outbox', {
     url: '/outbox',
     templateUrl: 'templates/outbox/index.html',
@@ -104,5 +146,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   } );
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise( '/salesforceSalesAddUnit' );
+  $urlRouterProvider.otherwise( 'home' );
 });

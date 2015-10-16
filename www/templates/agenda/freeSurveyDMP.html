@@ -1,0 +1,43 @@
+<ion-view view-title="Halaman Salesforce Sales">
+  <ion-header-bar align-title="center" class="bar-dark">
+    <button class="button icon ion-ios-home" ng-click="goBack()"></button>
+    <h1 class="title">DISTRIBUSI MATPRO/POSMAT</h1>
+    <button class="button icon ion-navicon" ng-click="showModal()"></button>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doSubmit()">
+      <ion-list>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Tanggal Mulai:</span>
+          <input type="text" ng-model="submitData.start">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Tanggal Berakhir:</span>
+          <input type="text" ng-model="submitData.end">
+        </ion-item>
+        <ion-item class="item-divider">
+          Jumlah Posmat yang diberikan?
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Lain-lain</span>
+          <input type="text" ng-model="submitData.other">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Hanging mobile</span>
+          <input type="text" ng-model="submitData.hanging">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Xbanner</span>
+          <input type="text" ng-model="submitData.xbanner">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Spanduk</span>
+          <input type="text" ng-model="submitData.banner">
+        </ion-item>
+      </ion-list>
+    </form>
+  </ion-content>
+  <ion-footer-bar class="bar-assertive">
+    <div class="title">https://telkomsel-sfa.telkomsigma.com</div>
+  </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,32 @@
+<ion-view view-title="Halaman Salesforce Sales">
+  <ion-header-bar align-title="center" class="bar-dark">
+    <button class="button icon ion-ios-home" ng-click="goBack()"></button>
+    <h1 class="title">Product Input</h1>
+    <button class="button icon ion-navicon" ng-click="showModal()"></button>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doSubmit()">
+      <ion-list>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Product:</span>
+          <input type="text" ng-model="submitData.product">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <div class="row">
+            <div class="col col-90">
+              <span class="input-label">Serial:</span>
+              <input type="text" ng-model="submitData.serial">
+            </div>
+            <div class="col">
+              <i class="ion-android-search" style="font-size: 25px"></i>
+            </div>
+          </div>
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Jumlah:</span>
+          <input type="text" ng-model="submitData.amount">
+        </ion-item>
+      </ion-list>
+    </form>
+  </ion-content>
+</ion-view>
