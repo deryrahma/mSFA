@@ -1,0 +1,21 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Pilih Menu</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="hideModal()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <ion-list>
+      <ion-item ng-click="editOutlet()">
+        Edit Outlet
+      </ion-item>
+      <ion-item ng-click="hideModal()">
+        Hapus Outlet
+      </ion-item>
+      <ion-item ng-click="hideModal()">
+        View Outlet
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-modal-view>

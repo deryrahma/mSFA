@@ -143,8 +143,92 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: '/addEvent',
     templateUrl: 'templates/transaksi/addEvent.html',
     controller: 'AddEventCtrl'
+  } )
+
+  .state( 'informasiStok', {
+    url: '/informasiStok',
+    templateUrl: 'templates/laporan/informasiStok.html',
+    controller: 'InformasiStokCtrl'
+  } )
+
+  .state( 'riwayatAktivitas', {
+    url: '/riwayatAktivitas',
+    templateUrl: 'templates/laporan/riwayatAktivitas.html',
+    controller: 'RiwayatAktivitasCtrl'
+  } )
+
+  .state( 'hargaProduk', {
+    url: '/hargaProduk',
+    templateUrl: 'templates/laporan/hargaProduk.html',
+    controller: 'HargaProdukCtrl'
+  } )
+
+  .state( 'outlet', {
+    url: '/outlet',
+    templateUrl: 'templates/laporan/outlet.html',
+    controller: 'OutletCtrl'
+  } )
+
+  .state( 'outletEdit', {
+    url: '/outletEdit',
+    templateUrl: 'templates/laporan/outletEdit.html',
+    controller: 'OutletEditCtrl'
+  } )
+
+  .state( 'reloadParameters', {
+    url: '/reloadParameters',
+    templateUrl: 'templates/settings/reloadParameters.html',
+    controller: 'ReloadParametersCtrl'
+  } )
+
+  .state( 'about', {
+    url: '/about',
+    templateUrl: 'templates/settings/about.html',
+    controller: 'AboutCtrl'
+  } )
+
+  .state( 'berita', {
+    url: '/berita',
+    templateUrl: 'templates/broadcast/berita.html',
+    controller: 'BeritaCtrl'
+  } )
+
+  .state( 'beritaShow', {
+    url: '/beritaShow',
+    templateUrl: 'templates/broadcast/beritaShow.html',
+    controller: 'BeritaShowCtrl'
+  } )
+
+  .state( 'faq', {
+    url: '/faq',
+    templateUrl: 'templates/broadcast/faq.html',
+    controller: 'FaqCtrl'
+  } )
+
+  .state( 'quiz', {
+    url: '/quiz',
+    templateUrl: 'templates/broadcast/quiz.html',
+    controller: 'QuizCtrl'
+  } )
+
+  .state( 'quizAnswer', {
+    url: '/quizAnswer',
+    templateUrl: 'templates/broadcast/quizAnswer.html',
+    controller: 'QuizAnswerCtrl'
+  } )
+
+  .state( 'documentSharing', {
+    url: '/documentSharing',
+    templateUrl: 'templates/broadcast/documentSharing.html',
+    controller: 'DocumentSharingCtrl'
+  } )
+
+  .state( 'personal', {
+    url: '/personal',
+    templateUrl: 'templates/personal/index.html',
+    controller: 'PersonalCtrl'
   } );
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise( 'home' );
+  $urlRouterProvider.otherwise( 'login' );
 });

@@ -19,7 +19,27 @@ angular.module('starter.controllers', [])
   $ionicModal.fromTemplateUrl('templates/transaksi/modalIndex.html', {
     scope: $scope
   }).then(function(modal) {
-    $scope.modal = modal;
+    $scope.modalTransaction = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/laporan/modalIndex.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalReport = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/settings/modalIndex.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalSettings = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/settings/modalLanguage.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalLanguage = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/broadcast/modalIndex.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBroadcast = modal;
   });
 
   // KOTAK KELUAR
@@ -29,7 +49,7 @@ angular.module('starter.controllers', [])
 
   // PERSONAL
   $scope.goPersonal = function() {
-    $state.go( 'login' );
+    $state.go( 'personal' );
   };
 
   // AGENDA
@@ -39,41 +59,96 @@ angular.module('starter.controllers', [])
 
   // TRANSAKSI
   $scope.goTransaction = function() {
-    $scope.modal.show();
+    $scope.modalTransaction.show();
   };
   $scope.hideModal = function() {
-    $scope.modal.hide();
+    $scope.modalTransaction.hide();
   };
   $scope.addPOS = function() {
     $state.go( 'addPos' );
-    $scope.modal.hide();
+    $scope.modalTransaction.hide();
   };
   $scope.addEvent = function() {
     $state.go( 'addEvent' );
-    $scope.modal.hide();
+    $scope.modalTransaction.hide();
   };
   $scope.eventSales = function() {
-    $scope.modal.hide();
+    $scope.modalTransaction.hide();
   };
 
   // BROADCAST
   $scope.goBroadcast = function() {
-    $state.go( 'login' );
+    $scope.modalBroadcast.show();
+  };
+  $scope.hideModalBroadcast = function() {
+    $scope.modalBroadcast.hide();
+  };
+  $scope.getNews = function() {
+    $scope.modalBroadcast.hide();
+    $state.go( 'berita' );
+  };
+  $scope.getFaq = function() {
+    $scope.modalBroadcast.hide();
+    $state.go( 'faq' );
+  };
+  $scope.getQuiz = function() {
+    $scope.modalBroadcast.hide();
+    $state.go( 'quiz' );
+  };
+  $scope.getFile = function() {
+    $scope.modalBroadcast.hide();
+    $state.go( 'documentSharing' );
   };
 
   // COLLABORATE
   $scope.goCollaborate = function() {
-    $state.go( 'login' );
   };
 
   // LAPORAN
   $scope.goReport = function() {
-    $state.go( 'login' );
+    $scope.modalReport.show();
+  };
+  $scope.hideModalReport = function() {
+    $scope.modalReport.hide();
+  };
+  $scope.informasiStok = function() {
+    $scope.modalReport.hide();
+    $state.go( 'informasiStok' );
+  };
+  $scope.riwayatAktivitas = function() {
+    $scope.modalReport.hide();
+    $state.go( 'riwayatAktivitas' );
+  };
+  $scope.hargaProduk = function() {
+    $scope.modalReport.hide();
+    $state.go( 'hargaProduk' );
+  };
+  $scope.outlet = function() {
+    $scope.modalReport.hide();
+    $state.go( 'outlet' );
   };
 
   // PENGATURAN
   $scope.goSettings = function() {
-    $state.go( 'login' );
+    $scope.modalSettings.show();
+  };
+  $scope.hideModalSettings = function() {
+    $scope.modalSettings.hide();
+  };
+  $scope.reloadParameters = function() {
+    $scope.modalSettings.hide();
+    $state.go( 'reloadParameters' );
+  };
+  $scope.pickLanguage = function() {
+    $scope.modalSettings.hide();
+    $scope.modalLanguage.show();
+  };
+  $scope.hideModalLanguage = function() {
+    $scope.modalLanguage.hide();
+  };
+  $scope.about = function() {
+    $scope.modalSettings.hide();
+    $state.go( 'about' );
   };
 } )
 
@@ -849,6 +924,207 @@ angular.module('starter.controllers', [])
 
   $scope.doInput = function() {
     $state.go( 'stockTakingInput' );
+  };
+
+  $scope.doSubmit = function() {
+  };
+} )
+
+.controller( 'InformasiStokCtrl', function( $scope, $state, $ionicModal, $ionicHistory ) {
+  $ionicModal.fromTemplateUrl('templates/laporan/modalInformasiStok.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+
+  $scope.showModal = function() {
+    $scope.modal.show();
+  };
+
+  $scope.hideModal = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.doSubmit = function() {
+  };
+} )
+
+.controller( 'RiwayatAktivitasCtrl', function( $scope, $state, $ionicHistory ) {
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+} )
+
+.controller( 'HargaProdukCtrl', function( $scope, $state, $ionicModal, $ionicHistory ) {
+  $ionicModal.fromTemplateUrl('templates/laporan/modalHargaProduk.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+
+  $scope.showModal = function() {
+    $scope.modal.show();
+  };
+
+  $scope.hideModal = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.doSubmit = function() {
+  };
+} )
+
+.controller( 'OutletCtrl', function( $scope, $state, $ionicModal, $ionicHistory ) {
+  $ionicModal.fromTemplateUrl('templates/laporan/modalOutlet.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+
+  $scope.showModal = function() {
+    $scope.modal.show();
+  };
+
+  $scope.hideModal = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.editOutlet = function() {
+    $scope.modal.hide();
+    $state.go( 'outletEdit' );
+  };
+
+  $scope.doSubmit = function() {
+  };
+} )
+
+.controller( 'OutletEditCtrl', function( $scope, $state, $ionicModal, $ionicHistory ) {
+  $ionicModal.fromTemplateUrl('templates/laporan/modalOutletEdit.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+
+  $scope.showModal = function() {
+    $scope.modal.show();
+  };
+
+  $scope.hideModal = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.doSubmit = function() {
+  };
+} )
+
+.controller( 'ReloadParametersCtrl', function( $scope, $state, $ionicHistory ) {
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+} )
+
+.controller( 'AboutCtrl', function( $scope, $state, $ionicHistory ) {
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+} )
+
+.controller( 'BeritaCtrl', function( $scope, $state, $ionicHistory ) {
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+
+  $scope.showNews = function() {
+    $state.go( 'beritaShow' );
+  }
+} )
+
+.controller( 'BeritaShowCtrl', function( $scope, $state, $ionicHistory ) {
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+} )
+
+.controller( 'FaqCtrl', function( $scope, $state, $ionicHistory ) {
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+} )
+
+.controller( 'QuizCtrl', function( $scope, $state, $ionicHistory ) {
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+
+  $scope.answer = function() {
+    $state.go( 'quizAnswer' );
+  };
+} )
+
+.controller( 'QuizAnswerCtrl', function( $scope, $state, $ionicModal, $ionicHistory ) {
+  $ionicModal.fromTemplateUrl('templates/broadcast/modalQuizAnswer.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+
+  $scope.showModal = function() {
+    $scope.modal.show();
+  };
+
+  $scope.hideModal = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.doSubmit = function() {
+  };
+} )
+
+.controller( 'DocumentSharingCtrl', function( $scope, $state, $ionicHistory ) {
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+} )
+
+.controller( 'PersonalCtrl', function( $scope, $state, $ionicModal, $ionicHistory ) {
+  $ionicModal.fromTemplateUrl('templates/personal/modalPassword.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalPassword = modal;
+  });
+
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
+
+  $scope.changePassword = function() {
+    $scope.modalPassword.show();
+  };
+  $scope.closePassword = function() {
+    $scope.modalPassword.hide();
+  };
+  $scope.submitPassword = function() {
+    $scope.modalPassword.hide();
   };
 
   $scope.doSubmit = function() {

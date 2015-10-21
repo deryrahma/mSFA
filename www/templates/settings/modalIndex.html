@@ -1,0 +1,24 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Pilih Menu</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="hideModalSettings()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-thumbnail-left" ng-click="reloadParameters()">
+        <img src="">
+        Reload Parameters
+      </ion-item>
+      <ion-item class="item-thumbnail-left" ng-click="pickLanguage()">
+        <img src="">
+        Pilih Bahasa
+      </ion-item>
+      <ion-item class="item-thumbnail-left" ng-click="about()">
+        <img src="">
+        About
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-modal-view>

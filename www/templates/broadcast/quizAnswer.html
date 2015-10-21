@@ -1,0 +1,26 @@
+<ion-view view-title="Halaman Tampil Berita">
+  <ion-header-bar align-title="center" class="bar-dark">
+    <button class="button icon ion-ios-home" ng-click="goBack()"></button>
+    <h1 class="title">SEFIIA-News Detail</h1>
+    <button class="button icon ion-navicon" ng-click="showModal()"></button>
+  </ion-header-bar>
+  <ion-content>
+    <div class="card">
+      <ion-item class="item-divider">
+        <p>Penulis: SUPERUSER</p>
+        <p style="font-size: 65%">Tanggal Berakhir : 2013-08-07 23:59:59.0</p>
+      </ion-item>
+      <ion-item class="item-text-wrap">
+        Apa fungsi menu Salesforce
+      </ion-item>
+    </div>
+    <form ng-submit="doSubmit()">
+      <ui-list>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Jawaban:</span>
+          <textarea rows="8" cols="10" ng-model="submitData.answer"></textarea>
+        </ion-item>
+      </ui-list>
+    </form>
+  </ion-content>
+</ion-view>

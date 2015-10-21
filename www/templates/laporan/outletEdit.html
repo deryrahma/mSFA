@@ -1,23 +1,27 @@
-<ion-view view-title="Halaman Visit Outlet">
+<ion-view view-title="Halaman Edit Outlet">
   <ion-header-bar align-title="center" class="bar-dark">
     <button class="button icon ion-ios-home" ng-click="goBack()"></button>
-    <h1 class="title">Visit Outlet</h1>
+    <h1 class="title">Edit Outlet</h1>
     <button class="button icon ion-navicon" ng-click="showModal()"></button>
   </ion-header-bar>
   <ion-content>
     <form ng-submit="doSubmit()">
       <ion-list>
         <ion-item class="item-input item-stacked-label">
-          <span class="input-label">Sales Area:</span>
-          <input type="text" ng-model="submitData.area">
+          <span class="input-label">Kategori Channel:</span>
+          <input type="text" ng-model="submitData.channel">
         </ion-item>
         <ion-item class="item-input item-stacked-label">
-          <span class="input-label">Nama Outlet:</span>
+          <span class="input-label">Kategori Objek:</span>
+          <input type="text" ng-model="submitData.object">
+        </ion-item>
+        <ion-item class="item-input item-stacked-label">
+          <span class="input-label">Nama:</span>
           <input type="text" ng-model="submitData.name">
         </ion-item>
         <ion-item class="item-input item-stacked-label">
-          <span class="input-label">Deskripsi:</span>
-          <textarea rows="8" cols="10"  ng-model="submitData.description"></textarea>
+          <span class="input-label">Alamat:</span>
+          <textarea rows="8" cols="10" ng-model="submitData.address"></textarea>
         </ion-item>
         <ion-item class="item-divider">
           <div class="row">
